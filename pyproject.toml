@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "visitedlinks"
+version = "0.1.0"
+description = ""
+authors = ["Egor Kuziakov <egor.kuziakov@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.23"}
+fastapi = "^0.104.1"
+pydantic = "^2.5.2"
+pydantic-settings = "^2.1.0"
+psycopg2-binary = "^2.9.9"
+uvicorn = "^0.24.0.post1"
+asyncpg = "^0.29.0"
+pytest-asyncio = "^0.21.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

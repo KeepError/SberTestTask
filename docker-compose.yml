@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:15.3-alpine3.18
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+
+  visited_links:
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "${VISITED_LINKS_SERVE_PORT}:80"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    logging:
+      options:
+        max-size: "50m"
